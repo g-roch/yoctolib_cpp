@@ -1,3 +1,10 @@
+yoctolib-cpp (1.10.33636-4) unstable; urgency=medium
+
+  * Add missing depends for -dev package
+  * Add missing depends for libyocto1.0.1
+
+ -- Gabriel Roch <gabriel@g-roch.ch>  Wed, 12 Dec 2018 21:23:33 +0100
+
 yoctolib-cpp (1.10.33636-1) unstable; urgency=medium
 
   * Initial release
