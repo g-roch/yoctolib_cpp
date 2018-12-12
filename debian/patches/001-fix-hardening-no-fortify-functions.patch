@@ -1,0 +1,92 @@
+fix lintian error : hardening-no-fortify-functions
+--- a/Binaries/GNUmakefile
++++ b/Binaries/GNUmakefile
+@@ -39,6 +39,10 @@
+ #
+ # ********************************************************************
+ 
++export DEB_BUILD_MAINT_OPTIONS = hardening=+all
++DPKG_EXPORT_BUILDFLAGS = 1
++include /usr/share/dpkg/buildflags.mk
++
+ UNAME := $(shell uname)
+ ARCH  := $(shell uname -m| sed -e s/i.86/i386/ -e s/arm.*/arm/)
+ 
+@@ -81,53 +85,52 @@
+ OBJDIR_OSX = $(DIR_OSX)objs/
+ OBJDIR_OSX32 = $(DIR_OSX32)objs/
+ 
+-
+ #CC compiler for each arch
+-CC_I386 = gcc
+-CC_X64 = gcc
++CC_I386 = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
++CC_X64 = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ ifdef TOOLCHAIN_QARM
+-CC_ARMEL = $(TOOLCHAIN_QARM)/bin/arm-none-linux-gnueabi-gcc
++CC_ARMEL = $(TOOLCHAIN_QARM)/bin/arm-none-linux-gnueabi-gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ else
+-CC_ARMEL = gcc
++CC_ARMEL = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ endif
+ ifdef TOOLCHAIN_ARMHF
+-CC_ARMHF = $(TOOLCHAIN_ARMHF)/bin/arm-linux-gnueabihf-gcc
++CC_ARMHF = $(TOOLCHAIN_ARMHF)/bin/arm-linux-gnueabihf-gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ else
+-CC_ARMHF = gcc
++CC_ARMHF = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ endif
+ ifdef TOOLCHAIN_AARCH64
+-CC_AARCH64 = $(TOOLCHAIN_AARCH64)/bin/arm-linux-gnueabihf-gcc
++CC_AARCH64 = $(TOOLCHAIN_AARCH64)/bin/arm-linux-gnueabihf-gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ else
+-CC_AARCH64 = gcc
++CC_AARCH64 = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ endif
+-CC_MIPS = mips-openwrt-linux-gcc
+-CC_MIPSEL = mipsel-openwrt-linux-gcc
+-CC_OSX = gcc
+-CC_OSX32 = gcc
++CC_MIPS = mips-openwrt-linux-gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
++CC_MIPSEL = mipsel-openwrt-linux-gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
++CC_OSX = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
++CC_OSX32 = gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+ 
+ 
+ #CPP compiler for each arch
+-CPP_I386 = g++
+-CPP_X64 = g++
++CPP_I386 = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
++CPP_X64 = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ ifdef TOOLCHAIN_QARM
+-CPP_ARMEL = $(TOOLCHAIN_QARM)/bin/arm-none-linux-gnueabi-g++
++CPP_ARMEL = $(TOOLCHAIN_QARM)/bin/arm-none-linux-gnueabi-g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ else
+-CPP_ARMEL = g++
++CPP_ARMEL = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ endif
+ ifdef TOOLCHAIN_ARMHF
+-CPP_ARMHF = $(TOOLCHAIN_ARMHF)/bin/arm-linux-gnueabihf-g++
++CPP_ARMHF = $(TOOLCHAIN_ARMHF)/bin/arm-linux-gnueabihf-g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ else
+-CPP_ARMHF = g++
++CPP_ARMHF = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ endif
+ ifdef TOOLCHAIN_AARCH64
+-CPP_AARCH64 = $(TOOLCHAIN_AARCH64)/bin/arm-linux-gnueabihf-g++
++CPP_AARCH64 = $(TOOLCHAIN_AARCH64)/bin/arm-linux-gnueabihf-g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ else
+-CPP_AARCH64 = g++
++CPP_AARCH64 = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ endif
+-CPP_MIPS = mips-openwrt-linux-g++
+-CPP_MIPSEL = mipsel-openwrt-linux-g++
+-CPP_OSX = g++
+-CPP_OSX32 = g++
++CPP_MIPS = mips-openwrt-linux-g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
++CPP_MIPSEL = mipsel-openwrt-linux-g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
++CPP_OSX = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
++CPP_OSX32 = g++ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+ 
+ #generic flags
+ OPTS_DBG = -g -Wall

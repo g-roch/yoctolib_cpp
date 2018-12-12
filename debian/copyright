@@ -1,0 +1,53 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Yoctolib_cpp
+Upstream-Contact: info@yoctopuce.com 
+Source: https://github.com/yoctopuce/yoctolib_cpp
+
+Files: *
+Copyright: 2011 and beyond by Yoctopuce Sarl, Switzerland
+License: yoctopuce-nonfree
+ Yoctopuce Sarl (hereafter Licensor) grants to you a perpetual
+ non-exclusive license to use, modify, copy and integrate this
+ file into your software for the sole purpose of interfacing
+ with Yoctopuce products.
+ .
+ You may reproduce and distribute copies of this file in
+ source or object form, as long as the sole purpose of this
+ code is to interface with Yoctopuce products. You must retain
+ this notice in the distributed source file.
+ .
+ You should refer to Yoctopuce General Terms and Conditions
+ for additional information regarding your rights and
+ obligations.
+ .
+ THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT
+ WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING
+ WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, FITNESS
+ FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO
+ EVENT SHALL LICENSOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL,
+ INDIRECT OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA,
+ COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY OR
+ SERVICES, ANY CLAIMS BY THIRD PARTIES (INCLUDING BUT NOT
+ LIMITED TO ANY DEFENSE THEREOF), ANY CLAIMS FOR INDEMNITY OR
+ CONTRIBUTION, OR OTHER SIMILAR COSTS, WHETHER ASSERTED ON THE
+ BASIS OF CONTRACT, TORT (INCLUDING NEGLIGENCE), BREACH OF
+ WARRANTY, OR OTHERWISE.
+
+Files: debian/*
+Copyright: 2018 Gabriel Roch <gabriel@g-roch.ch>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".

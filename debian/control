@@ -1,0 +1,60 @@
+Source: yoctolib-cpp
+Section: non-free/libs
+Priority: extra
+Maintainer: Gabriel Roch <gabriel@g-roch.ch>
+Build-Depends: 
+ debhelper (>= 10),
+ dh-exec,
+ libusb-1.0-0-dev
+Standards-Version: 3.9.8
+Homepage: https://www.yoctopuce.com/
+Vcs-Git: http://sodium.roch.website/git/pako/yoctolib_cpp.git/
+Vcs-Browser: http://sodium.roch.website/git/pako/yoctolib_cpp.git/
+
+Package: libyocto-dev
+Section: non-free/libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: librairy to access to USB Yoctopuce devices, developer files
+ Yoctopuce designs, manufactures and sells USB devices for automatic system 
+ builders.
+ .
+ libYocto-dev, for the static version
+
+Package: libyocto1.0.1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: librairy to access to USB Yoctopuce devices
+ Yoctopuce designs, manufactures and sells USB devices for automatic system 
+ builders.
+ .
+ libYocto, needed for all binaries
+
+Package: libyapi-dev
+Section: non-free/libdevel
+Architecture: any
+Depends: ${misc:Depends}
+Description: basic API to access to USB Yoctopuce devices, developer files
+ Yoctopuce designs, manufactures and sells USB devices for automatic system 
+ builders.
+ .
+ libYAPI-dev, for the static version
+
+Package: libyapi1.0.1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: basic API to access to USB Yoctopuce devices
+ Yoctopuce designs, manufactures and sells USB devices for automatic system 
+ builders.
+ .
+ libYAPI, needed for all binaries
+
+Package: libyocto-doc
+Section: non-free/doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: librairy to access to USB Yoctopuce devices, documentation
+ Yoctopuce designs, manufactures and sells USB devices for automatic system 
+ builders.
+ .
+ yoctolib_cpp, documentation and examples
