@@ -14,7 +14,10 @@ Vcs-Browser: http://sodium.roch.website/git/pako/yoctolib_cpp.git/
 Package: libyocto-dev
 Section: non-free/libdevel
 Architecture: any
-Depends: ${misc:Depends}, libyocto1.0.1, libyapi-dev
+Depends:
+ ${misc:Depends},
+ libyocto1.0.1 (= ${binary:Version}),
+ libyapi-dev
 Description: librairy to access to USB Yoctopuce devices, developer files
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.
@@ -23,7 +26,10 @@ Description: librairy to access to USB Yoctopuce devices, developer files
 
 Package: libyocto1.0.1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libyapi1.0.1
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libyapi1.0.1
 Description: librairy to access to USB Yoctopuce devices
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.
@@ -33,7 +39,9 @@ Description: librairy to access to USB Yoctopuce devices
 Package: libyapi-dev
 Section: non-free/libdevel
 Architecture: any
-Depends: ${misc:Depends}, libyapi1.0.1
+Depends:
+ ${misc:Depends},
+ libyapi1.0.1 (= ${binary:Version})
 Description: basic API to access to USB Yoctopuce devices, developer files
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.
@@ -42,7 +50,9 @@ Description: basic API to access to USB Yoctopuce devices, developer files
 
 Package: libyapi1.0.1
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
 Description: basic API to access to USB Yoctopuce devices
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.
@@ -52,7 +62,8 @@ Description: basic API to access to USB Yoctopuce devices
 Package: libyocto-doc
 Section: non-free/doc
 Architecture: all
-Depends: ${misc:Depends}
+Depends:
+ ${misc:Depends}
 Description: librairy to access to USB Yoctopuce devices, documentation
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.

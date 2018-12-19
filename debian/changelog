@@ -1,3 +1,10 @@
+yoctolib-cpp (1.10.33636-6) unstable; urgency=medium
+
+  * Fix-Build depends: set to binariy version for *-dev package
+  * Rename symbols filename for respect architecture
+
+ -- Gabriel Roch <gabriel@g-roch.ch>  Sat, 15 Dec 2018 11:28:29 +0100
+
 yoctolib-cpp (1.10.33636-5) unstable; urgency=medium
 
   * Add README upstream in package
