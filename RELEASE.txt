@@ -1,3 +1,5 @@
-CPP v1.10.33636
+CPP v1.10.33736
 
-- Add support for data logger usage attribute
+- Fix some typos in error messages
+- Fix crash after 8192 YAPI.InitAPI et YAPI.Free
+- Improve error recovery with WebSocket connection
