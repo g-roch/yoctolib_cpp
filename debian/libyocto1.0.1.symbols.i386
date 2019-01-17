@@ -2215,6 +2215,7 @@ libyocto.so.1.0.1 libyocto1.0.1 #MINVER#
  _ZN9YFunction16_json_get_stringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.33736
  _ZN9YFunction16get_errorMessageB5cxx11Ev@Base 1.10.33736
  _ZN9YFunction16get_friendlyNameB5cxx11Ev@Base 1.10.33736
+ _ZN9YFunction16get_serialNumberB5cxx11Ev@Base 1.10.34022
  _ZN9YFunction18FUNCTIONID_INVALIDB5cxx11E@Base 1.10.33736
  _ZN9YFunction18HARDWAREID_INVALIDB5cxx11E@Base 1.10.33736
  _ZN9YFunction18muteValueCallbacksEv@Base 1.10.33736
