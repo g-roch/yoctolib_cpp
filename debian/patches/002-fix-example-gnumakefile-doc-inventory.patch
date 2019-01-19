@@ -1,0 +1,54 @@
+Patch one example, after, other example is overwrite by this example
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,8 @@
++
++all:
++	$(MAKE) -f Makefile.save
++	cd Binaries/ && $(MAKE)
++
++clean:
++	$(MAKE) -f Makefile.restore
++	rm -fr Binaries/linux/
+--- /dev/null
++++ b/Makefile.restore
+@@ -0,0 +1,16 @@
++
++
++FILES=$(wildcard Examples.save/*/GNUmakefile)
++
++
++clean: $(patsubst Examples.save/%/GNUmakefile,Examples/%/GNUmakefile,$(FILES))
++	mkdir -p Examples.save
++	rmdir Examples.save
++
++
++Examples/%/GNUmakefile: Examples.save/%/GNUmakefile .FORCE
++	mv $< $@
++	rmdir Examples.save/$*
++
++.FORCE:
++.PHONY: .FORCE
+--- /dev/null
++++ b/Makefile.save
+@@ -0,0 +1,20 @@
++
++
++FILES=$(wildcard Examples/*/GNUmakefile)
++ORIG= Examples/Doc-Inventory/GNUmakefile
++EXCEPTION= Examples.save/Prog-QT/GNUmakefile Examples.save/Prog-Dll/GNUmakefile Examples.save/Doc-Inventory/GNUmakefile
++
++
++all: $(patsubst Examples/%/GNUmakefile,Examples.save/%/GNUmakefile,$(FILES))
++
++
++$(EXCEPTION):
++	@echo
++
++# patching
++Examples.save/%/GNUmakefile: Examples/%/GNUmakefile $(ORIG)
++	@mkdir -p Examples.save/$*
++	mv $< $@
++	cp $(ORIG) $<
++
++
