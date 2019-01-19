@@ -41,7 +41,8 @@ Section: non-free/libdevel
 Architecture: any
 Depends:
  ${misc:Depends},
- libyapi1.0.1 (= ${binary:Version})
+ libyapi1.0.1 (= ${binary:Version}),
+ libusb-1.0-0-dev
 Description: basic API to access to USB Yoctopuce devices, developer files
  Yoctopuce designs, manufactures and sells USB devices for automatic system 
  builders.
