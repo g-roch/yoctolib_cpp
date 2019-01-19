@@ -2,6 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Yoctolib_cpp
 Upstream-Contact: info@yoctopuce.com 
 Source: https://github.com/yoctopuce/yoctolib_cpp
+Files-Excluded: Binaries/linux/ Binaries/osx32/ Binaries/osx/ Binaries/windows/
 
 Files: *
 Copyright: 2011 and beyond by Yoctopuce Sarl, Switzerland
